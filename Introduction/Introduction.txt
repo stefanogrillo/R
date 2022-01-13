@@ -8,4 +8,9 @@ Forecasting can be of two typologies: qualitative and quantitative. The qualitat
 the quantitative f. can be applied with two conditions: numerical information about the past is available, and it is reasonable to assume the past trend will
 continue.
 
-In forecasting, there are 5 main steps: 
+In forecasting, there are 5 main steps: (1) defining the problem, (2) gathering information, (3) doing a preliminary (exploratory) analysis, (4) choosing and 
+fitting models, and (5) using and evaluating the forecasting model.
+The step n° (1) involves creating relationships with people involved in the data collection, in the database maintenance, and also with the final users of the 
+forecasts. The (2)nd step involves gathering statistical data, in an appropriate quantity and for a long timespan. The (3)rd step is to graph the data to look
+for patterns (trends, seasonality, business cycles, outliers). The (4)rth step is to compare those models that might fit the data. Finally, the (5)fth step is 
+to valuate the fit of the forecast model to the data. 
