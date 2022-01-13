@@ -1,0 +1,11 @@
+Forecasting is a common statistical task in business, but it can be confused with planning and goals.
+So, forecasting is about predicting the future with a high degree of accuracy. To do so, we can use every information available, such as historical data and any
+future events that might have an impact on the forecasts. Goals are objective that we would like to achieve, and that need to be supported by a plan.
+As such, planning is the selection and use of an appropriate set of actions to achieve goals. Planning can be strenghtened by forecasting, because the lattest 
+can highlight the most important factors involved.
+
+Forecasting can be of two typologies: qualitative and quantitative. The qualitative f. does not involve data, while quantitative forecasting does. In particular,
+the quantitative f. can be applied with two conditions: numerical information about the past is available, and it is reasonable to assume the past trend will
+continue.
+
+In forecasting, there are 5 main steps: 
