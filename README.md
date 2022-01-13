@@ -5,4 +5,5 @@ My journey starts from the book _Forecasting: Principles and Practice (2nd ed; A
 which I have already studied in my master degree.
 
 ## Structure
-- Introduction
+- Introductory Knowledge
+- Codes
