@@ -1,3 +1,5 @@
+# This code aims to do a quick forecast about Australian Beer Consumption after 2010
+
 # Clean the console
 rm (list=ls())
 
@@ -15,8 +17,9 @@ ausbeer
 
 # Exploratory analysis: plot the graph
 autoplot(ausbeer)
-# The graph shows annual seasonality (ups in the second semester/summer)
-# An increasing trend till 1975, then a steady/declining trend
+# The graph shows annual seasonality (ups in the second semester/summer), an 
+# increasing trend till 1975, then a steady/declining trend
+# great variance between ups and downs (around 100 megalitres on average)
 
 # Create a subset from 1992, plot it
 ausbeer_1992 <- window(ausbeer, start=1992)
