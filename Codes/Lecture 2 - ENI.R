@@ -39,6 +39,7 @@ souvenir <- scan("souvenir.txt")
 souvenirts <- ts(souvenir, frequency = 12, start=c(1987,1))
 autoplot(souvenirts)
 # Observations are seasonal (1 year cycle), peak close to year-end, increasing trend
+# Non-stationary
 
 
 # Download data from the internet (in this case: YAHOO! Finance)
