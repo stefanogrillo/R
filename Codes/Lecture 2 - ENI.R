@@ -50,7 +50,7 @@ priceENI
 
 # Plot
 autoplot(priceENI)
-# 4 Time Series of financial observations: Open, High, Low, Close
+# 4 Time Series of financial observations (share prices): Open, High, Low, Close
 
 # Plot only share prices at Open
 autoplot(priceENI[,1])
@@ -58,4 +58,4 @@ autoplot(priceENI[,1])
 
 # Summary
 summary(priceENI[,1])
-# Mean is above Median: data is slightly lower skewed
+# Mean is above Median: data is slightly lower skewed for Open prices
