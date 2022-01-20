@@ -1,6 +1,8 @@
 # Remove previous codes from the console; upload package
 rm(list=ls())
 library (fpp2)
+library(tseries) # Only needed for the last line of code
+
 
 # Plot Australian Beer
 autoplot (ausbeer)
@@ -27,3 +29,18 @@ beer4 <- tail(ausbeer, 45)
 # Observe first 6 (head) and last 6 (tail) observations
 head(beer2) 
 tail(beer2)
+
+
+# Get data from document of type ".txt" 
+souvenir <- scan("souvenir.txt")
+# 84 observations
+
+# Create a Time Series which starts from 1st month of 1987
+souvenirts <- ts(souvenir, frequency = 12, start=c(1987,1))
+autoplot(souvenirts)
+# Observations are seasonal (1 year cycle), peak close to year-end, increasing trend
+
+
+# Download data from the internet (in this case: YAHOO! Finance)
+priceENI <- get.hist.quote(instrument = "ENI.MI", start='2017-09-01', end= '2019-02-14')
+# Acronym of the company (ENI.MI) needed
