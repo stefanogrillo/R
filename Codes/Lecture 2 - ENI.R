@@ -54,3 +54,8 @@ autoplot(priceENI)
 
 # Plot only share prices at Open
 autoplot(priceENI[,1])
+# Data seems not to be seasonal, nor cyclical, nor seems to have a clear trend
+
+# Summary
+summary(priceENI[,1])
+# Mean is above Median: data is slightly lower skewed
