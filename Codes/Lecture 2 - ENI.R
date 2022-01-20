@@ -44,3 +44,13 @@ autoplot(souvenirts)
 # Download data from the internet (in this case: YAHOO! Finance)
 priceENI <- get.hist.quote(instrument = "ENI.MI", start='2017-09-01', end= '2019-02-14')
 # Acronym of the company (ENI.MI) needed
+
+# Take a look at the structure: shares' prices Open, High, Low, Close
+priceENI
+
+# Plot
+autoplot(priceENI)
+# 4 Time Series of financial observations: Open, High, Low, Close
+
+# Plot only share prices at Open
+autoplot(priceENI[,1])
