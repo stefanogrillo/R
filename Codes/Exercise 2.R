@@ -40,7 +40,7 @@ which.max(gold)
 
 rm(list=ls())
 
-# Set Working Directory; import data
+# Set Working Directory, then import data
 tute1 <- read.csv("tute1.csv", header=TRUE)
 
 # Plot data
@@ -56,6 +56,8 @@ autoplot(mytimeseries, facets=TRUE)
 # Select a Time Series and explore it
 
 rm(list=ls())
+
+# Upload a library to read ".xlsx" files 
 library(readxl)
 
 # Set Working Directory, then import data
@@ -80,3 +82,97 @@ gglagplot(turnoverts,do.lines=F)
 
 ggAcf(turnoverts)
 # Very strong and persistent autocorrelation (>0,625) till lag 24
+
+
+# 4.
+
+# Create time plots of the following time series: 
+# bicoal, chicken, dole, usdeaths, lynx, goog, writing, fancy, a10, h02
+
+library(ggplot2)
+
+?lynx
+# Annual number of lynx trapped in McKenzie river district of northwest Canada
+# 1821–1934.
+
+autoplot(lynx)
+# Cyclical pattern
+
+ggseasonplot(lynx)
+# Definitely not seasonal
+
+ggAcf(lynx)
+# Auto-correlation is present (with 4 spikes >0,5) and has a swinging pattern
+# First positive auto-correlation, then negative, then again positive and on and on
+
+?goog
+# Closing stock prices of GOOG from the NASDAQ exchange, for 1000 consecutive 
+# trading days between 25 February 2013 and 13 February 2017
+
+p <- autoplot(goog, xlab = "Trading Day", ylab = "Price") + ggtitle("Closing Stock Prices") 
+p
+# Graph is more readable; non-stationary; seems not seasonal
+
+ggseasonplot(goog)
+# Definitely not seasonal; seems cyclical between 200/600 and 600/1000
+
+ggAcf(goog)
+# Very strong autocorrelation (>0,875) till lag 25
+# Observations depend on previous values 
+
+?writing
+# Industry sales for printing and writing paper (in thousands of French francs)
+# Jan 1963 – Dec 1972
+
+autoplot(writing)
+# Seasonal pattern, non-stationary
+
+ggseasonplot(writing)
+# Seasonality is annual, and every year has more or less the same pattern 
+
+ggsubseriesplot(writing)
+# Annual minimum in Aug
+
+ggAcf(writing)
+# Significant auto-correlation in a seemingly seasonal pattern
+
+
+# 5
+
+# explore the seasonal patterns in the following time series
+# writing, fancy, a10, h02
+
+?fancy
+# Monthly sales for a souvenir shop on the wharf at a beach resort town in 
+# Queensland, Australia
+
+autoplot(fancy)
+# Non-stationary; seasonal
+
+ggseasonplot(fancy)
+# Seasonal
+
+ggsubseriesplot(fancy)
+# Minimum in Jan, MAX in Dec
+
+ggAcf(fancy)
+# Slightly auto-correlated at lags 1, 12 and 24 (only one spike >0,625)
+
+?a10
+# Monthly government expenditure (millions of dollars) as part of the Pharmaceutical
+# Benefit Scheme for products falling under ATC code A10 as recorded by the 
+# Australian Health Insurance Commission; July 1991 - June 2008
+
+autoplot(a10)
+# Non-stationary, increasing pattern; seasonal
+
+ggseasonplot(a10)
+# Seasonal pattern more or less consistent from year to year
+
+ggsubseriesplot(a10)
+# Min in Feb, MAX in Jan
+
+ggAcf(a10)
+# Strong and persistent auto-correlation (>0,50 till lag 24)
+# Observations are linked one another
+
