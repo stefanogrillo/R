@@ -49,3 +49,34 @@ autoplot(mytimeseries) # Same as "autoplot(mytimeseries, facets=FALSE)"
 autoplot(mytimeseries, facets=TRUE)
 # The graphs are slightly different, with "facets=FALSE" being more readable
 
+
+# 3
+
+# Download "retail.xlsx", read it
+# Select a Time Series and explore it
+
+rm(list=ls())
+library(readxl)
+
+# Set Working Directory, then import data
+retaildata <- read_excel("retail.xlsx", skip=1)
+# 190 variables with 381 observations each
+
+# Select one column as TS
+turnoverts <- ts(retaildata[,"A3349874C"], frequency=12, start=c(1982,4))
+# Turnover;  New South Wales;  Footwear and other personal accessory retailing
+
+autoplot(turnoverts)
+# TS with seasonal pattern; increasing pattern; non-stationary
+
+ggseasonplot(turnoverts)
+# Seasonality is more visible; every year has more or less the same pattern
+
+ggsubseriesplot(turnoverts)
+# Minimum in Feb, MAX in Dec
+
+gglagplot(turnoverts,do.lines=F)
+# Great 'auto-dependence' in lag 12; clearly a seasonal pattern of 12 months
+
+ggAcf(turnoverts)
+# Very strong and persistent autocorrelation (>0,625) till lag 24
